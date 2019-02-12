@@ -25,7 +25,6 @@ class App extends Component {
               <div className="container">
                 <Route path="/main" component={Main} />
                 <Route path="/dygraphs" component={Dygraphs} />
-                <Redirect to="/main" />
               </div>
             </Switch>
           </React.Fragment>

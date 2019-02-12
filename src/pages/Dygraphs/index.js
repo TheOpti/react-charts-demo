@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import DygraphsChart from '../../components/DygraphsChart';
+
 
 class Dygraphs extends Component {
   render() {
@@ -8,6 +10,9 @@ class Dygraphs extends Component {
         <h1>
           Dygraphs
         </h1>
+        <div>
+          <DygraphsChart />
+        </div>
       </div>
     );
   }
