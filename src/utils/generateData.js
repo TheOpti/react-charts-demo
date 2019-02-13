@@ -8,6 +8,7 @@ function generateData() {
       generateRandomNumberBetweenRange(75, 90),
       generateRandomNumberBetweenRange(25, 45),
       generateRandomNumberBetweenRange(15, 32),
+      155,
     ]);
   }
 
