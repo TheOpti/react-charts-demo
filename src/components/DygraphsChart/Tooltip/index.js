@@ -42,12 +42,12 @@ class Tooltip extends Component {
       return null;
     }
 
-    let leftPos = seriesValues[0].canvasx - 150 - 25;
+    let leftPos = seriesValues[0].canvasx - 150 - 30;
 
     const isLeft = leftPos < 75;
 
     if (isLeft) {
-      leftPos = seriesValues[0].canvasx + 25;
+      leftPos = seriesValues[0].canvasx + 30;
     }
 
     const divStyle = this.state.visible ? {

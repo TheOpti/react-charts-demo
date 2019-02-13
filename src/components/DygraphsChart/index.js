@@ -3,6 +3,7 @@ import Rx from 'rx';
 import generateData from '../../utils/generateData';
 import Dygraph from './Dygraph';
 import Tooltip from './Tooltip';
+import HighlightBar from './HighlightBar';
 
 import './styles.css';
 
@@ -19,23 +20,18 @@ class DygraphsChart extends Component {
 
   mouseLeave = (event) => this.setMouseCoords(event, false);
 
-  setMouseCoords = (event, isVisible) => {
+  setMouseCoords = (event, isVisible, points = []) => {
     this.mouseCoordsStream.onNext({
       x: event.offsetX,
       y: event.offsetY,
-      seriesValues: [],
+      seriesValues: points,
       visible: isVisible,
     });
   };
 
   onChartHighlight = (event, x, points) => {
     if (this.mouseCoordsStream) {
-      this.mouseCoordsStream.onNext({
-        x: event.offsetX,
-        y: event.offsetY,
-        seriesValues: points,
-        visible: true,
-      });
+      this.setMouseCoords(event, true, points);
     }
   };
 
@@ -61,6 +57,9 @@ class DygraphsChart extends Component {
         <Tooltip
           mouseCoordsStream={this.mouseCoordsStream}
           chartElem={this.chartRef.current}
+        />
+        <HighlightBar
+          mouseCoordsStream={this.mouseCoordsStream}
         />
       </div>
     );

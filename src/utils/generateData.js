@@ -2,7 +2,7 @@
 function generateData() {
   const data = [];
 
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 250; i++) {
     data.push([
       i + 1,
       generateRandomNumberBetweenRange(75, 90),

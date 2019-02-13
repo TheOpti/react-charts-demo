@@ -17,7 +17,7 @@ class DygraphsChart extends Component {
         labels: [ 'x', 'A', 'B', 'C', 'X'],
         highlightCallback: this.props.onChartHighlight,
         showRangeSelector: true,
-        strokeWidth: 2,
+        strokeWidth: 1,
         showLabelsOnHighlight: false,
       }
     );

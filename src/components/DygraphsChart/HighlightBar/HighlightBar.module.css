@@ -1,0 +1,10 @@
+.root {
+  width: 30px;
+  position: absolute;
+  background-color: rgba(0,0,0,0.1);
+  pointer-events: none;
+  user-select: none;
+  top: 0;
+  bottom: 65px;
+  transform: translateX(-50%);
+}
