@@ -1,3 +1,44 @@
 .root {
   position: absolute;
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 2px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+  padding: 10px 20px;
+  z-index: 100;
+  pointer-events: none;
+  width: 150px;
+  transform: translateY(-50%);
+}
+
+.arrow {
+  transform: translateY(-50%) rotate(45deg);
+  background-color: white;
+  border: 1px solid gray;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 50%;
+}
+
+.leftArrow {
+  left: -8px;
+  border-top-width: 0;
+  border-right-width: 0;
+}
+
+.rightArrow {
+  right: -8px;
+  border-bottom-width: 0;
+  border-left-width: 0;
+}
+
+.title {
+  font-weight: 600;
+  text-align: center;
+}
+
+.seriesRow {
+  display: flex;
+  justify-content: space-between;
 }

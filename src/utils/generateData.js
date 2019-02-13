@@ -7,7 +7,8 @@ function generateData() {
       i + 1,
       generateRandomNumberBetweenRange(75, 90),
       generateRandomNumberBetweenRange(25, 45),
-    ])
+      generateRandomNumberBetweenRange(15, 32),
+    ]);
   }
 
   return data;
