@@ -10,17 +10,29 @@ class DygraphsChart extends Component {
   }
 
   componentDidMount() {
-    const g = new Dygraph(
+    const {
+      onChartHighlight,
+      visibility,
+    } = this.props;
+
+    this.graph = new Dygraph(
       this.myRef.current,
       this.props.data,
       {
         labels: [ 'x', 'A', 'B', 'C', 'X'],
-        highlightCallback: this.props.onChartHighlight,
+        highlightCallback: onChartHighlight,
         showRangeSelector: true,
         strokeWidth: 1,
         showLabelsOnHighlight: false,
-      }
+        visibility: visibility,
+      },
     );
+  }
+
+  componentDidUpdate() {
+    this.props.visibility.forEach((visibility, index) => {
+      this.graph.setVisibility(index, visibility);
+    });
   }
 
   render() {

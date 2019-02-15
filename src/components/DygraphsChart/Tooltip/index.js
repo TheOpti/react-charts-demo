@@ -38,7 +38,7 @@ class Tooltip extends Component {
       visible,
     } = this.state;
 
-    if (!visible || !seriesValues.length || y > 320 - 56) {
+    if (!visible || !seriesValues.length || y > 255) {
       return null;
     }
 
@@ -55,6 +55,8 @@ class Tooltip extends Component {
       top: y,
     } : null;
 
+    const dateToDisplay = (new Date(seriesValues[0].xval)).toLocaleDateString();
+
     return (
       <div className={styles.root} style={divStyle}>
         { isLeft && <div className={[styles.arrow, styles.leftArrow].join(' ')} /> }
@@ -67,14 +69,14 @@ class Tooltip extends Component {
             x:
           </div>
           <div>
-            { seriesValues[0].xval }
+            { dateToDisplay }
           </div>
         </div>
         <hr />
         {
           seriesValues.map((series) => {
             return (
-              <div className={styles.seriesRow}>
+              <div key={series.name} className={styles.seriesRow}>
                 <div>{ series.name } :</div>
                 <div>{ series.yval }</div>
               </div>

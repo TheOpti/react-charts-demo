@@ -17,8 +17,11 @@ class HighlightBar extends Component {
   componentDidMount () {
     if (this.props.mouseCoordsStream) {
       this.mouseCoordsObserver =
-        this.props.mouseCoordsStream.subscribe(({x, y, visible}) => {
-          this.setState({x, y, visible});
+        this.props.mouseCoordsStream.subscribe(({x, y, seriesValues, visible}) => {
+          const xVal = seriesValues[0] && seriesValues[0].canvasx;
+          const isVisible = xVal && visible;
+
+          this.setState({x: xVal, y, visible: isVisible});
         });
     }
   }
@@ -36,7 +39,7 @@ class HighlightBar extends Component {
       visible,
     } = this.state;
 
-    if (!visible || !y || y > 320 - 56) {
+    if (!visible || !y || y > 255) {
       return null;
     }
 

@@ -1,0 +1,12 @@
+.root {
+  margin: 20px 0;
+}
+
+.formRow {
+  display: flex;
+  margin: 10px 0;
+}
+
+.checkbox {
+  margin-right: 20px;
+}
