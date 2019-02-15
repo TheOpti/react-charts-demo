@@ -37,6 +37,12 @@ class DygraphsChart extends Component {
     }
   }
 
+  componentDidMount() {
+    setTimeout(() => {
+      this.resizeDygraph();
+    }, 100);
+  }
+
   mouseEnter = (event) => this.setMouseCoords(event, true);
 
   mouseLeave = (event) => this.setMouseCoords(event, false);
@@ -80,6 +86,10 @@ class DygraphsChart extends Component {
       })
   }
 
+  resizeDygraph() {
+    this.getDygraph().resize();
+  }
+
   render() {
     const {
       seriesVisibility
@@ -87,11 +97,7 @@ class DygraphsChart extends Component {
 
     const graphStyle = {
       width: '100%',
-      maxWidth: '1110px',
-      overflow: 'hidden',
     };
-
-    console.log('seriesVisibility ', seriesVisibility);
 
     const testVisibility = [...this.getSeriesVisibility(), true];
 
@@ -104,6 +110,11 @@ class DygraphsChart extends Component {
           ref={this.chartRef}
         >
           <Dygraph
+            ref={(dygraphElem) => {
+              if (dygraphElem) {
+                this.getDygraph = () => dygraphElem.getDygraph();
+              }
+            }}
             data={generateData()}
             style={graphStyle}
             onChartHighlight={this.onChartHighlight}

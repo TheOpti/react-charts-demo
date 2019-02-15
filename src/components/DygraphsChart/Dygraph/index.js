@@ -15,7 +15,7 @@ class DygraphsChart extends Component {
       visibility,
     } = this.props;
 
-    this.graph = new Dygraph(
+    this.dygraph = new Dygraph(
       this.myRef.current,
       this.props.data,
       {
@@ -25,14 +25,34 @@ class DygraphsChart extends Component {
         strokeWidth: 1,
         showLabelsOnHighlight: false,
         visibility: visibility,
+        colors: [
+          '#00b7ff',
+          '#0066cc',
+          '#00b7ff',
+          '#ce392b',
+        ],
+        series: {
+          'B': {
+            strokeWidth: 1.5,
+            strokePattern: [6, 3],
+          },
+          'X': {
+            strokeWidth: 3,
+            strokePattern: [7, 2],
+          }
+        }
       },
     );
   }
 
   componentDidUpdate() {
     this.props.visibility.forEach((visibility, index) => {
-      this.graph.setVisibility(index, visibility);
+      this.dygraph.setVisibility(index, visibility);
     });
+  }
+
+  getDygraph() {
+    return this.dygraph;
   }
 
   render() {
