@@ -6,7 +6,7 @@ import Tooltip from './Tooltip';
 import HighlightBar from './HighlightBar';
 import SeriesVisibilityPanel from './SeriesVisibilityPanel';
 
-import './styles.css';
+import styles from './DygraphsChart.module.css';
 
 
 class DygraphsChart extends Component {
@@ -104,7 +104,7 @@ class DygraphsChart extends Component {
     return (
       <React.Fragment>
         <div
-          className="dygraphs-chart"
+          className={styles.root}
           onMouseEnter={(event) => this.mouseEnter(event)}
           onMouseLeave={(event) => this.mouseLeave(event)}
           ref={this.chartRef}
