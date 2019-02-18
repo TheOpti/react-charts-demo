@@ -29,6 +29,15 @@ class EchartsChart extends Component {
           xAxisIndex: 'all'
         }
       },
+      dataZoom: {
+        show: true,
+        realtime: true,
+      },
+      grid: {
+        left: 50,
+        right: 50,
+        bottom: 75
+      },
       xAxis: {
         type: 'time',
         data: data.xValues,
@@ -65,7 +74,7 @@ class EchartsChart extends Component {
   render() {
     const divStyles = {
       width: '100%',
-      height: '300px',
+      height: '320px',
       maxWidth: '1110px'
     };
 
