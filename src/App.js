@@ -8,6 +8,7 @@ import {
 
 import Main from './pages/Main';
 import Dygraphs from './pages/Dygraphs';
+import Echarts from './pages/Echarts';
 
 import Header from './components/Header';
 
@@ -22,6 +23,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={Main} />
               <Route path="/dygraphs" component={Dygraphs} />
+              <Route path="/echarts" component={Echarts} />
             </Switch>
           </div>
         </React.Fragment>

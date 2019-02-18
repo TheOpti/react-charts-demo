@@ -13,6 +13,9 @@ function Header() {
         <LinkContainer to="/dygraphs">
           <Nav.Link>Dygraphs</Nav.Link>
         </LinkContainer>
+        <LinkContainer to="/echarts">
+          <Nav.Link>Echarts</Nav.Link>
+        </LinkContainer>
       </Nav>
     </Navbar>
   )
