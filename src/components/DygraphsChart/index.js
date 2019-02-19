@@ -4,7 +4,7 @@ import generateData from '../../utils/generateData';
 import Dygraph from './Dygraph';
 import Tooltip from './Tooltip';
 import HighlightBar from './HighlightBar';
-import SeriesVisibilityPanel from './SeriesVisibilityPanel';
+import SeriesVisibilityPanel from '../SeriesVisibilityPanel';
 
 import styles from './DygraphsChart.module.css';
 
